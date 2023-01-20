@@ -1,0 +1,26 @@
+.message-input {
+  position: relative;
+  padding: 0.5rem;
+  bottom: 0;
+}
+
+.message-container {
+  height: 50vh;
+}
+
+.message {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.bot-message {
+  text-align: left;
+}
+.user-message {
+  background-color: blue;
+  color: white;
+  direction: ltr;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  text-align: right;
+}

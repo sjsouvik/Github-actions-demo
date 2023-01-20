@@ -1,0 +1,18 @@
+.list-container {
+  display: flex;
+  height: 80vh;
+}
+
+.chat-container {
+  padding-inline-start: 0;
+}
+
+.search-label {
+  text-align: left;
+}
+
+.search-box {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}

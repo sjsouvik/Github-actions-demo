@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #f1f1f1;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
