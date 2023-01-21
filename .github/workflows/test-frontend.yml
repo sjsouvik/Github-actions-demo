@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run the frontend tests
-        uses: "./.github/actions/test-frontend"
+        uses: ./.github/actions/test-frontend

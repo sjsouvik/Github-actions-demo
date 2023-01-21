@@ -3,11 +3,11 @@ name: "test frontend with npm and all dependencies"
 runs:
   using: "composite"
   steps:
-    - name: "Use node js"
+    - name: Use node js
       uses: actions/setup-node@v3
 
-    - name: "Install dependencies"
+    - name: Install dependencies
       uses: npm ci
 
-    - name: "Test the app"
+    - name: Test the app
       run: npm run test
