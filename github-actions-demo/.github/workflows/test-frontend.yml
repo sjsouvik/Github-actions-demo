@@ -1,0 +1,17 @@
+name: "test frontend"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the latest code
+        uses: actions/checkout@v3
+
+      - name: Run the frontend tests
+        uses: "./.github/actions/test-frontend"
