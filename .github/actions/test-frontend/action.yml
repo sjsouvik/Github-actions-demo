@@ -10,7 +10,7 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      uses: npm install
+      run: npm install
 
     - name: Test the app
       shell: bash
