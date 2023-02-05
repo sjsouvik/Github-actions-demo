@@ -1,13 +1,17 @@
 name: "test frontend with npm and all dependencies"
-
+description: ""
 runs:
   using: "composite"
   steps:
     - name: Use node js
       uses: actions/setup-node@v3
+      with:
+        node-version: 18
 
     - name: Install dependencies
-      uses: npm ci
+      shell: bash
+      uses: npm install
 
     - name: Test the app
+      shell: bash
       run: npm run test
