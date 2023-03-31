@@ -1,4 +1,4 @@
-name: "test frontend with npm and all dependencies"
+name: "test and build the frontend with npm and all dependencies"
 description: ""
 runs:
   using: "composite"
@@ -8,10 +8,23 @@ runs:
       with:
         node-version: 18
 
+    - name: Cache node modules
+      uses: actions/cache@v3
+      id: cache-npm
+      with:
+        path: ~/.npm
+        key: ${{runnner.os}}-node-${{hash('**/package-lock.json')}}
+        restore-keys: ${{runnner.os}}-node
+
     - name: Install dependencies
       shell: bash
+      if: ${{steps.cache-npm.outputs.cache-hit != 'true'}}
       run: npm install
 
     - name: Test the app
       shell: bash
       run: npm run test
+
+    - name: Build the app
+      shell: bash
+      run: npm run build
