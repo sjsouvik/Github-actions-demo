@@ -13,7 +13,7 @@ runs:
       id: cache-npm
       with:
         path: ~/.npm
-        key: ${{runnner.os}}-node-${{hash('**/package-lock.json')}}
+        key: ${{runnner.os}}-node-${{hashFiles('**/package-lock.json')}}
         restore-keys: ${{runnner.os}}-node
 
     - name: Install dependencies
