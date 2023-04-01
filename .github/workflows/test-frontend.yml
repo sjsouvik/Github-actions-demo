@@ -25,6 +25,10 @@ jobs:
       - name: Checkout the latest code
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        shell: bash
+        run: npm ci
+
       - name: Build the app
         shell: bash
         run: npm run build
