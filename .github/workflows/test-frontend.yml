@@ -16,3 +16,15 @@ jobs:
 
       - name: Run the frontend tests
         uses: ./.github/actions/test-frontend
+
+  build-app:
+    runs-on: ubuntu-latest
+    needs: run-tests
+
+    steps:
+      - name: Checkout the latest code
+        uses: actions/checkout@v3
+
+      - name: Build the app
+        shell: bash
+        run: npm run build

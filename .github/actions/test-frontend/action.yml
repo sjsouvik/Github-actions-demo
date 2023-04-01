@@ -8,14 +8,14 @@ runs:
       with:
         node-version: 18
 
-    # - name: Cache node modules
-    #   uses: actions/cache@v3
-    #   id: cache-npm
-    #   with:
-    #     path: ~/.npm
-    #     key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-npm-
+    - name: Cache node modules
+      uses: actions/cache@v3
+      id: cache-npm
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-
 
     - name: Install dependencies
       shell: bash
@@ -25,7 +25,3 @@ runs:
     - name: Test the app
       shell: bash
       run: npm run test
-
-    - name: Build the app
-      shell: bash
-      run: npm run build
