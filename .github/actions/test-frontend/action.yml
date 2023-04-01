@@ -8,6 +8,10 @@ runs:
       with:
         node-version: 18
 
+    - name: access runner context
+      shell: bash
+      run: echo ${{runer}}
+
     - name: Cache node modules
       uses: actions/cache@v3
       id: cache-npm
