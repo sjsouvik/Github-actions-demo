@@ -19,7 +19,7 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+      # if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
       run: npm ci
 
     - name: Test the app
