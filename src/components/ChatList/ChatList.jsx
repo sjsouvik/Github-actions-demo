@@ -5,7 +5,7 @@ import "./ChatList.css";
 import { ChatDetails } from "../ChatDetails/ChatDetails";
 
 export const ChatList = () => {
-  const [chats, setChats] = useState();
+  const [chats, setChats] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [selectedChat, setSelectedChat] = useState(null);
 
