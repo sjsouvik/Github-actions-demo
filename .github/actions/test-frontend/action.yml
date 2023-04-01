@@ -13,12 +13,13 @@ runs:
       id: cache-npm
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: ${{ runner.os }}-node
+        key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-
 
-    - name: Install dependencies
+    - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+      name: Install dependencies
       shell: bash
-      if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
       run: npm install
 
     - name: Test the app
