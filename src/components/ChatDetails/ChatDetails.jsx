@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ChatDetails.css";
 
 export const ChatDetails = (props) => {
   const { selectedChatId, chats, setChats } = props;
   const [newMessage, setNewMessage] = useState("");
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () =>
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+
+  useEffect(() => {
+    console.log("called");
+    scrollToBottom();
+  }, [chats, selectedChatId]);
 
   const sendMessage = () => {
     const updatedChat = chats.map((chat) =>
@@ -13,7 +22,7 @@ export const ChatDetails = (props) => {
             messageList: [
               ...chat.messageList,
               {
-                messageId: 3243,
+                messageId: crypto.randomUUID(),
                 message: newMessage,
                 sender: "USER",
                 messageType: "text",
@@ -49,6 +58,7 @@ export const ChatDetails = (props) => {
             {textMessage.message}
           </li>
         ))}
+        <div ref={messagesEndRef} />
       </ul>
       <section className="send-message-section">
         <input
