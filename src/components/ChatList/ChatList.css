@@ -1,6 +1,6 @@
 .list-container {
   display: flex;
-  height: 80vh;
+  height: 88vh;
 }
 
 .chat-container {
@@ -15,4 +15,8 @@
   margin-bottom: 1rem;
   padding: 0.5rem;
   width: 100%;
+}
+
+.selected-chat {
+  background-color: #f1f3f6;
 }

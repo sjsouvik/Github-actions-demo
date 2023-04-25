@@ -5,22 +5,26 @@
 }
 
 .message-container {
+  display: grid;
+  grid-auto-rows: max-content;
+  row-gap: 0.5rem;
   height: 50vh;
 }
 
 .message {
   list-style: none;
-  margin-bottom: 1rem;
+  min-width: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  align-self: start;
 }
 
 .bot-message {
-  text-align: left;
+  justify-self: left;
+  background-color: white;
 }
 .user-message {
-  background-color: blue;
+  justify-self: right;
+  background-color: #027cd5;
   color: white;
-  direction: ltr;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  text-align: right;
 }

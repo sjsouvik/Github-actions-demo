@@ -50,6 +50,7 @@ export const ChatList = () => {
             <SingleChat
               key={chat.id}
               {...chat}
+              selectedChat={selectedChat}
               setSelectedChat={setSelectedChat}
             />
           ))}

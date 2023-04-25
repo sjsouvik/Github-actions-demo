@@ -30,7 +30,15 @@ export const ChatDetails = (props) => {
   const selectedChat = chats.find((chat) => chat.id === selectedChatId);
 
   return (
-    <div style={{ flexGrow: "1" }}>
+    <div
+      style={{
+        flexGrow: "1",
+        width: "60%",
+        overflow: "auto",
+        position: "relative",
+        backgroundColor: "#f1f3f6",
+      }}
+    >
       <h1>{selectedChat.title}</h1>
       <ul className="message-container">
         {selectedChat.messageList.map((textMessage) => (
@@ -44,8 +52,9 @@ export const ChatDetails = (props) => {
           </li>
         ))}
       </ul>
-      <div>
+      <div style={{ position: "absolute", bottom: "0", width: "100%" }}>
         <input
+          style={{ width: "80%" }}
           type="text"
           placeholder="Type a message..."
           className="message-input"
