@@ -27,13 +27,18 @@ export const ChatDetails = (props) => {
     setNewMessage("");
   };
 
+  const messageInputKeydownHandler = (e) => {
+    if (e.key === "Enter" && newMessage) {
+      sendMessage();
+    }
+  };
+
   const selectedChat = chats.find((chat) => chat.id === selectedChatId);
 
   return (
     <div
       style={{
         flexGrow: "1",
-        width: "60%",
         overflow: "auto",
         position: "relative",
         backgroundColor: "#f1f3f6",
@@ -59,9 +64,16 @@ export const ChatDetails = (props) => {
           placeholder="Type a message..."
           className="message-input"
           onChange={(e) => setNewMessage(e.target.value)}
+          onKeyDown={messageInputKeydownHandler}
           value={newMessage}
         />
-        <button onClick={sendMessage}>Add</button>
+        <button
+          className="add-btn"
+          disabled={!newMessage}
+          onClick={sendMessage}
+        >
+          Add
+        </button>
       </div>
     </div>
   );

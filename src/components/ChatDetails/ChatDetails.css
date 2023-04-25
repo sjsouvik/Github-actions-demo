@@ -1,7 +1,9 @@
 .message-input {
-  position: relative;
   padding: 0.5rem;
-  bottom: 0;
+}
+
+.add-btn {
+  padding: 0.5rem 2rem;
 }
 
 .message-container {

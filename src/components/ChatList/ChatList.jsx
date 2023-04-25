@@ -33,7 +33,7 @@ export const ChatList = () => {
 
   return (
     <div className={selectedChat ? "list-container " : ""}>
-      <div style={{ flexGrow: "1", overflow: "auto" }}>
+      <div style={{ width: selectedChat ? "40%" : "100%", overflow: "auto" }}>
         <label htmlFor="search" className="search-label">
           Filter by Title / Order ID
         </label>
