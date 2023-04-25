@@ -40,7 +40,6 @@ export const ChatDetails = (props) => {
       style={{
         flexGrow: "1",
         overflow: "auto",
-        position: "relative",
         backgroundColor: "#f1f3f6",
       }}
     >
@@ -57,9 +56,16 @@ export const ChatDetails = (props) => {
           </li>
         ))}
       </ul>
-      <div style={{ position: "absolute", bottom: "0", width: "100%" }}>
+      <div
+        style={{
+          position: "absolute",
+          bottom: "0",
+          width: "60%",
+          backgroundColor: "white",
+        }}
+      >
         <input
-          style={{ width: "80%" }}
+          style={{ width: "98%" }}
           type="text"
           placeholder="Type a message..."
           className="message-input"
@@ -67,13 +73,6 @@ export const ChatDetails = (props) => {
           onKeyDown={messageInputKeydownHandler}
           value={newMessage}
         />
-        <button
-          className="add-btn"
-          disabled={!newMessage}
-          onClick={sendMessage}
-        >
-          Add
-        </button>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 .list-container {
   display: flex;
   height: 88vh;
+  position: relative;
 }
 
 .chat-container {
