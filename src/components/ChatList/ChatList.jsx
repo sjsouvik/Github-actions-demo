@@ -9,15 +9,19 @@ export const ChatList = () => {
   const [searchText, setSearchText] = useState("");
   const [selectedChat, setSelectedChat] = useState(null);
 
-  useEffect(() => {
-    async function loadChats() {
+  async function loadChats() {
+    try {
       const response = await axios.get(
         "https://my-json-server.typicode.com/codebuds-fk/chat/chats"
       );
 
       setChats(response.data);
+    } catch (error) {
+      console.error(error);
     }
+  }
 
+  useEffect(() => {
     loadChats();
   }, []);
 

@@ -1,3 +1,16 @@
+.single-chat {
+  flex-grow: 1;
+  overflow: auto;
+  background-color: #f1f3f6;
+}
+
+.send-message-section {
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+  background-color: white;
+}
+
 .message-input {
   padding: 0.5rem;
   width: 80%;
@@ -11,7 +24,8 @@
   display: grid;
   grid-auto-rows: max-content;
   row-gap: 0.5rem;
-  height: 50vh;
+  padding: 0 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .message {

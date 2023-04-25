@@ -36,13 +36,7 @@ export const ChatDetails = (props) => {
   const selectedChat = chats.find((chat) => chat.id === selectedChatId);
 
   return (
-    <div
-      style={{
-        flexGrow: "1",
-        overflow: "auto",
-        backgroundColor: "#f1f3f6",
-      }}
-    >
+    <div className="single-chat">
       <h1>{selectedChat.title}</h1>
       <ul className="message-container">
         {selectedChat.messageList.map((textMessage) => (
@@ -56,24 +50,17 @@ export const ChatDetails = (props) => {
           </li>
         ))}
       </ul>
-      <div
-        style={{
-          position: "absolute",
-          bottom: "0",
-          width: "60%",
-          backgroundColor: "white",
-        }}
-      >
+      <section className="send-message-section">
         <input
           style={{ width: "98%" }}
           type="text"
-          placeholder="Type a message..."
+          placeholder="Type a message & press enter to send..."
           className="message-input"
           onChange={(e) => setNewMessage(e.target.value)}
           onKeyDown={messageInputKeydownHandler}
           value={newMessage}
         />
-      </div>
+      </section>
     </div>
   );
 };
