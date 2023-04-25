@@ -5,6 +5,6 @@ describe("App", () => {
   it("renders heading", () => {
     const { getByText } = render(<App />);
 
-    expect(getByText(/chat app/i)).toBeInTheDocument();
+    expect(getByText(/flipkart chat support/i)).toBeInTheDocument();
   });
 });
