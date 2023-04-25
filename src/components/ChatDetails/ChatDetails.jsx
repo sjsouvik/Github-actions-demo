@@ -10,7 +10,6 @@ export const ChatDetails = (props) => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
 
   useEffect(() => {
-    console.log("called");
     scrollToBottom();
   }, [chats, selectedChatId]);
 
@@ -46,7 +45,11 @@ export const ChatDetails = (props) => {
 
   return (
     <div className="single-chat">
-      <h1>{selectedChat.title}</h1>
+      <div className="single-chat-heading">
+        <img src={selectedChat.imageURL} alt="profile" height={50} width={50} />
+        <h2>{selectedChat.title}</h2>
+      </div>
+
       <ul className="message-container">
         {selectedChat.messageList.map((textMessage) => (
           <li
@@ -60,6 +63,7 @@ export const ChatDetails = (props) => {
         ))}
         <div ref={messagesEndRef} />
       </ul>
+
       <section className="send-message-section">
         <input
           style={{ width: "98%" }}

@@ -38,17 +38,19 @@ export const ChatList = () => {
   return (
     <div className={selectedChat ? "list-container " : ""}>
       <div style={{ width: selectedChat ? "40%" : "100%", overflow: "auto" }}>
-        <label htmlFor="search" className="search-label">
-          Filter by Title / Order ID
-        </label>
-        <input
-          id="search"
-          type="search"
-          placeholder="Start typing to search"
-          onChange={changeSearchText}
-          value={searchText}
-          className="search-box"
-        />
+        <div className="search-bar">
+          <label htmlFor="search" className="search-label">
+            Filter by Title / Order ID
+          </label>
+          <input
+            id="search"
+            type="search"
+            placeholder="Start typing to search"
+            onChange={changeSearchText}
+            value={searchText}
+            className="search-box"
+          />
+        </div>
         <ul className="chat-container">
           {filteredChat?.map((chat) => (
             <SingleChat

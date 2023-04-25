@@ -4,6 +4,18 @@
   background-color: #f1f3f6;
 }
 
+.single-chat-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  position: sticky;
+  top: 0;
+}
+
 .send-message-section {
   position: absolute;
   bottom: 0;

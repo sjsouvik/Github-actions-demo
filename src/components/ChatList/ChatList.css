@@ -4,6 +4,13 @@
   position: relative;
 }
 
+.search-bar {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
+
 .chat-container {
   padding-inline-start: 0;
 }

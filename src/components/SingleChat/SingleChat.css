@@ -1,7 +1,7 @@
 .container {
   display: flex;
   align-items: center;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #f0f0f0;
   padding: 1rem;
   cursor: pointer;
 }
