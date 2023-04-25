@@ -2,6 +2,7 @@
   flex-grow: 1;
   overflow: auto;
   background-color: #f1f3f6;
+  width: 60%;
 }
 
 .single-chat-heading {
@@ -46,6 +47,11 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   align-self: start;
+}
+
+.message-time {
+  text-align: right;
+  margin-top: 0.5rem;
 }
 
 .bot-message {

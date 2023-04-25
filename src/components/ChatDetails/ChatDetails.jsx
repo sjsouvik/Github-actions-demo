@@ -25,6 +25,7 @@ export const ChatDetails = (props) => {
                 message: newMessage,
                 sender: "USER",
                 messageType: "text",
+                timestamp: Date.now(),
               },
             ],
           }
@@ -58,7 +59,10 @@ export const ChatDetails = (props) => {
             }`}
             key={textMessage.messageId}
           >
-            {textMessage.message}
+            <div>{textMessage.message}</div>
+            <div className="message-time">
+              {new Date(textMessage.timestamp).toLocaleTimeString()}
+            </div>
           </li>
         ))}
         <div ref={messagesEndRef} />

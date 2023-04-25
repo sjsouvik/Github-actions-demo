@@ -1,7 +1,15 @@
 import "./SingleChat.css";
 
 export const SingleChat = (props) => {
-  const { id, title, orderId, imageURL, selectedChat, setSelectedChat } = props;
+  const {
+    id,
+    title,
+    orderId,
+    imageURL,
+    latestMessageTimestamp,
+    selectedChat,
+    setSelectedChat,
+  } = props;
   return (
     <li
       className={`container ${selectedChat?.id === id ? "selected-chat" : ""}`}
@@ -13,6 +21,9 @@ export const SingleChat = (props) => {
       <div className="chat-details">
         <p>{title}</p>
         <div>{orderId}</div>
+      </div>
+      <div style={{ marginLeft: "auto" }}>
+        {new Date(latestMessageTimestamp).toLocaleDateString()}
       </div>
     </li>
   );
