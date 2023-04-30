@@ -26,4 +26,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy to vercel
-        uses: ./.github/workflows/deploy-frontend.yml
+        uses: sjsouvik/Github-actions-demo/.github/workflows/deploy-frontend.yml@main
