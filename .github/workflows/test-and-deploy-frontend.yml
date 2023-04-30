@@ -20,3 +20,4 @@ jobs:
   deploy-frontend:
     needs: build-frontend
     uses: sjsouvik/Github-actions-demo/.github/workflows/deploy-frontend.yml@main
+    secrets: inherit
