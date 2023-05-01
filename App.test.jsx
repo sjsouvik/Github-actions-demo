@@ -5,6 +5,6 @@ describe("App", () => {
   it("renders heading", () => {
     const { getByText } = render(<App />);
 
-    expect(getByText(/my chat support/i)).toBeInTheDocument();
+    expect(getByText(/chat support app/i)).toBeInTheDocument();
   });
 });
