@@ -7,7 +7,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  build-frontend:
+  test-frontend:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,6 +18,6 @@ jobs:
         uses: ./.github/actions/test-frontend
 
   deploy-frontend:
-    needs: build-frontend
+    needs: test-frontend
     uses: sjsouvik/Github-actions-demo/.github/workflows/deploy-frontend.yml@main
-    secrets: inherit
+    secrets: inherit # Secrets are not automatically passed to reusable workflows. Workflows that call reusable workflows in the same organization or enterprise can use the `inherit` keyword to implicitly pass the secrets to the called workflow. Reference: https://github.blog/changelog/2022-05-03-github-actions-simplify-using-secrets-with-reusable-workflows/, https://docs.github.com/en/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow
