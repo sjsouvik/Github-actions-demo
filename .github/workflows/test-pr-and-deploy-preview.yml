@@ -1,0 +1,21 @@
+name: Test PRs & deploy the preview
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-frontend:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the latest code
+        uses: actions/checkout@v3
+
+      - name: Run the frontend tests and build the app
+        uses: ./.github/actions/test-frontend
+
+  deploy-preview:
+    needs: test-frontend
+    uses: sjsouvik/Github-actions-demo/.github/workflows/deploy-preview.yml@main
+    secrets: inherit
