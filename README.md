@@ -11,3 +11,9 @@ Explore github actions, workflows
 - Reusable workflows to deploy the changes to the production and preview environment
 
 - A custom action to test the frontend app
+
+### References:
+
+- [GitHub actions Docs](https://docs.github.com/en/actions)
+
+- [GitHub actions with Vercel](https://vercel.com/guides/how-can-i-use-github-actions-with-vercel)
