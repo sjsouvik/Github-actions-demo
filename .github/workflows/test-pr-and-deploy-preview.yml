@@ -19,3 +19,11 @@ jobs:
     needs: test-frontend
     uses: sjsouvik/Github-actions-demo/.github/workflows/deploy-preview.yml@main
     secrets: inherit
+
+  automerge-dependabots:
+    needs:
+      - test-frontend
+      - deploy-preview
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    uses: sjsouvik/Github-actions-demo/.github/workflows/dependabot-automerge.yml@main
+    secrets: inherit
