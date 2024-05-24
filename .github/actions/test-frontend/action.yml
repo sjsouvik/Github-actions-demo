@@ -7,7 +7,7 @@ runs:
     - name: Use node js
       uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: 20
 
     - name: Cache node modules
       uses: actions/cache@v3
@@ -26,3 +26,13 @@ runs:
     - name: Test the app
       shell: bash
       run: npm run test
+
+    - name: Run the app
+      shell: bash
+      run: npm run dev & npx wait-on http://localhost:5173
+
+    - name: Test accessibility of the app using axe CLI
+      shell: bash
+      run: |
+        npm install -g @axe-core/cli
+        axe http://localhost:5173
