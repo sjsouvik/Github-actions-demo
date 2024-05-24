@@ -7,7 +7,8 @@
     "dev": "vite",
     "test": "vitest",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test-a11y": "axe http://localhost:5173 --exit"
   },
   "dependencies": {
     "axios": "1.7.2",
