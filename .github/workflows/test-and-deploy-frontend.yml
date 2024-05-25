@@ -17,6 +17,8 @@ jobs:
       - name: Run the frontend tests and build the app
         uses: ./.github/actions/test-frontend
 
+      - run: npm run build --if-present
+
       - name: Run the app
         shell: bash
         run: npm run dev & npx wait-on http://localhost:5173
