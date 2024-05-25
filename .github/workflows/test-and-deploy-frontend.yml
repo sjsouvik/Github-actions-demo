@@ -17,6 +17,16 @@ jobs:
       - name: Run the frontend tests and build the app
         uses: ./.github/actions/test-frontend
 
+      - name: Run the app
+        shell: bash
+        run: npm run dev & npx wait-on http://localhost:5173
+
+      - name: Test accessibility of the app using axe CLI
+        shell: bash
+        run: |
+          npm install -g @axe-core/cli
+          axe http://localhost:5173 --exit
+
   deploy-frontend:
     needs: test-frontend
     uses: sjsouvik/Github-actions-demo/.github/workflows/deploy-frontend.yml@main
