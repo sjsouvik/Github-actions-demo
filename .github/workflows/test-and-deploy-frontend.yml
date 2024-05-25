@@ -21,7 +21,7 @@ jobs:
 
       - name: Run the app
         shell: bash
-        run: npm run dev & npx wait-on --timeout 60000 http://localhost:5173
+        run: npm run dev & npx wait-on --timeout 60000 http://127.0.0.1:5173
 
       - name: Test accessibility of the app using axe CLI
         shell: bash
