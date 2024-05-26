@@ -31,11 +31,11 @@ runs:
       shell: bash
       run: npm run build
 
-    # disabling the performance audits for mobile, desktop since there're some perf issues to be fixed and need to continue deploying the changes
+    # need to continue deploying the changes, hence, disabling the performance audits for mobile since there're some perf issues to be fixed
     # - name: Run lighthouse mobile audit
     #   shell: bash
     #   run: npm run lhci:mobile
 
-    # - name: Run lighthouse desktop audit
-    #   shell: bash
-    #   run: npm run lhci:desktop
+    - name: Run lighthouse desktop audit
+      shell: bash
+      run: npm run lhci:desktop
