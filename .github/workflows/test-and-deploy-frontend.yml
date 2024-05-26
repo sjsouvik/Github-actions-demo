@@ -19,9 +19,13 @@ jobs:
 
       - run: npm run build --if-present
 
-      - name: Run lighthouse
+      - name: Run lighthouse mobile audit
         shell: bash
-        run: npm run ci:lighthouse
+        run: npm run lhci
+
+      - name: Run lighthouse desktop audit
+        shell: bash
+        run: npm run lhci:desktop
 
       # it was failing to execute this command `npx wait-on...` and giving the following error: `Timed out waiting for: http://localhost:5173`,
       # some issue is there with the wait on package with the node version probably

@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test-a11y": "axe http://localhost:5173 --exit",
-    "ci:lighthouse": "lhci autorun"
+    "lhci:mobile": "lhci autorun",
+    "lhci:desktop": "lhci autorun --collect.settings.preset=desktop"
   },
   "dependencies": {
     "axios": "1.7.2",
