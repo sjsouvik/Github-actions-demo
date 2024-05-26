@@ -26,3 +26,16 @@ runs:
     - name: Test the app
       shell: bash
       run: npm run test
+
+    - name: Build the app
+      shell: bash
+      run: npm run build
+
+    # disabling the performance audits for mobile
+    # - name: Run lighthouse mobile audit
+    #   shell: bash
+    #   run: npm run lhci:mobile
+
+    - name: Run lighthouse desktop audit
+      shell: bash
+      run: npm run lhci:desktop

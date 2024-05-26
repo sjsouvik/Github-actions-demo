@@ -17,18 +17,8 @@ jobs:
       - name: Run the frontend tests and build the app
         uses: ./.github/actions/test-frontend
 
-      - run: npm run build --if-present
-
-      - name: Run lighthouse mobile audit
-        shell: bash
-        run: npm run lhci:mobile
-
-      - name: Run lighthouse desktop audit
-        shell: bash
-        run: npm run lhci:desktop
-
       # it was failing to execute this command `npx wait-on...` and giving the following error: `Timed out waiting for: http://localhost:5173`,
-      # some issue is there with the wait on package with the node version probably
+      # some issue is there with the wait on package with the node version probably, need to fix this, once it's fixed, need to move it test-frontend action
 
       # - name: Run the app
       #   shell: bash
