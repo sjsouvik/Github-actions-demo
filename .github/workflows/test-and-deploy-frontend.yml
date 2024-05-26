@@ -21,7 +21,7 @@ jobs:
 
       - name: Run lighthouse mobile audit
         shell: bash
-        run: npm run lhci
+        run: npm run lhci:mobile
 
       - name: Run lighthouse desktop audit
         shell: bash
